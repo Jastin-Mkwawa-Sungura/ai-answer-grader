@@ -8,18 +8,19 @@ import pymysql
 app = Flask(__name__)
 
 # ---- Database connection setup ----
-DB_HOST = "localhost"
-DB_USER = "root"
-DB_PASSWORD = ""         # <-- Change if your MySQL has a password
-DB_NAME = "chat_validation"
+$servername = "localhost"; 
+$dbUsername = "u120901047_Ay33U"; 
+$dbPassword = "JJms@1010";        
+$dbname     = "u120901047_7p38k";   
+$conn = new mysqli();
 
 # Create connection function
 def get_db_connection():
     return pymysql.connect(
-        host=DB_HOST,
-        user=DB_USER,
-        password=DB_PASSWORD,
-        database=DB_NAME,
+        host=$servername,
+        user=$dbUsername,
+        password=$dbPassword,
+        database=$dbname,
         cursorclass=pymysql.cursors.DictCursor
     )
 
@@ -83,3 +84,4 @@ def grade_answer():
 # ---- Run the app ----
 if __name__ == '__main__':
     app.run(debug=True)
+
